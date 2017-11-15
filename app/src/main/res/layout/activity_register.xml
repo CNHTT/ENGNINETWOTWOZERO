@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+
+    android:background="@color/all_bg_color"
+    android:layout_height="match_parent"
+    tools:context="com.extra.saas.RegisterActivity"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/all_bg_color"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/>
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:background="@color/color_line"/>
+    <LinearLayout
+        android:background="@color/login_bg_color"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="15dp"
+            android:fillViewport="true"
+            android:scrollbarThumbVertical="@android:color/transparent"
+            android:scrollbars="vertical">
+
+            <LinearLayout
+                android:id="@+id/content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="13dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="15dp"
+                        android:src="@mipmap/ic_mobile_flag"/>
+
+                    <EditText
+                        android:id="@+id/et_mobile"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:hint="@string/enter_name"
+                        android:inputType="textVisiblePassword"
+                        android:maxLength="11"
+                        android:singleLine="true"
+                        android:text=""
+                        android:textColor="@color/_9"
+                        android:textColorHint="@color/_9"
+                        android:textSize="14dp"/>
+
+                    <ImageView
+                        android:id="@+id/iv_clean_phone"
+                        android:layout_width="40dp"
+                        android:layout_height="fill_parent"
+                        android:scaleType="centerInside"
+                        android:src="@mipmap/ic_clear"
+                        android:visibility="gone"/>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="@color/e"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="13dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="15dp"
+                        android:src="@mipmap/ic_password_flag"/>
+
+                    <EditText
+                        android:id="@+id/et_password"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:hint="@string/enter_pass"
+                        android:inputType="textPassword"
+                        android:maxLength="30"
+                        android:singleLine="true"
+                        android:text=""
+                        android:textColor="@color/_9"
+                        android:textColorHint="@color/_9"
+                        android:textSize="14dp"/>
+
+                    <ImageView
+                        android:id="@+id/clean_password"
+                        android:layout_width="40dp"
+                        android:layout_height="fill_parent"
+                        android:scaleType="centerInside"
+                        android:src="@mipmap/ic_clear"
+                        android:visibility="gone"/>
+                    <ImageView
+                        android:id="@+id/iv_show_pwd"
+                        android:layout_width="40dp"
+                        android:layout_height="fill_parent"
+                        android:scaleType="centerInside"
+                        android:src="@mipmap/pass_gone"/>
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="@color/e"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="13dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="15dp"
+                        android:src="@mipmap/ic_password_flag"/>
+
+                    <EditText
+                        android:id="@+id/et_password2"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:hint="@string/confirm_password"
+                        android:inputType="textPassword"
+                        android:maxLength="30"
+                        android:singleLine="true"
+                        android:text=""
+                        android:textColor="@color/_9"
+                        android:textColorHint="@color/_9"
+                        android:textSize="14dp"/>
+
+                    <ImageView
+                        android:id="@+id/clean_password2"
+                        android:layout_width="40dp"
+                        android:layout_height="fill_parent"
+                        android:scaleType="centerInside"
+                        android:src="@mipmap/ic_clear"
+                        android:visibility="gone"/>
+                    <ImageView
+                        android:id="@+id/iv_show_pwd2"
+                        android:layout_width="40dp"
+                        android:layout_height="fill_parent"
+                        android:scaleType="centerInside"
+                        android:src="@mipmap/pass_gone"/>
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="@color/e"/>
+                <Button
+                    android:id="@+id/btn_register"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="21dp"
+                    android:background="@drawable/login_button_bg"
+                    android:text="@string/register"
+                    android:textColor="@color/white"
+                    android:textSize="18dp"/>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+
+</LinearLayout>
