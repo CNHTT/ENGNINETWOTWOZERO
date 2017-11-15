@@ -46,5 +46,7 @@ dependencies {
 
     compile 'com.youth.banner:banner:1.4.10'  //最新版本
 
+    compile 'com.android.support:recyclerview-v7:26.1.0'
     compile 'com.google.code.gson:gson:2.7'
+    compile 'com.huxq17.xrefreshview:xrefreshview:3.6.9'
 }

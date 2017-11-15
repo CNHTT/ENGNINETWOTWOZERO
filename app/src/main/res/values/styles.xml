@@ -50,6 +50,13 @@
         <item name="windowActionModeOverlay">true</item>
     </style>
 
+
+
+    <style name="Widget_GifView" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+
+
     <!--
     Overwrite the Style of the BezelImageView for the whole MaterialDrawer
     <style name="BezelImageView">

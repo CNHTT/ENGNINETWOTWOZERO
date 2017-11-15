@@ -62,6 +62,8 @@ public class MainActivity extends BaseActivity {
            login=  getIntent().getExtras().getInt("login");
            if (login==1){
                toolbarTitle.setText(getResources().getString(R.string.personal));
+               txtUser.setTextSize(14);
+               txtUser.setSelected(true);
                if (userFragment==null){
                    userFragment = new UserFragment();
                    transaction.add(R.id.fragment_container,userFragment);
@@ -72,6 +74,8 @@ public class MainActivity extends BaseActivity {
            }else {
 
                toolbarTitle.setText(getResources().getString(R.string.free_zone));
+               txtFreeZone.setSelected(true);
+               txtFreeZone.setTextSize(14);
                if (freeZoneFragment==null){
                    freeZoneFragment = new FreeZoneFragment();
                    transaction.add(R.id.fragment_container,freeZoneFragment);
@@ -83,7 +87,10 @@ public class MainActivity extends BaseActivity {
         }catch (Exception e){
 
             toolbarTitle.setText(getResources().getString(R.string.free_zone));
+            txtFreeZone.setSelected(true);
+            txtFreeZone.setTextSize(14);
             if (freeZoneFragment==null){
+
                 freeZoneFragment = new FreeZoneFragment();
                 transaction.add(R.id.fragment_container,freeZoneFragment);
             }else {

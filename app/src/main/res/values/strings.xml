@@ -17,15 +17,16 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="no_data">NO DATA</string>
 
 
-    <string-array name="url" >
+    <string-array name="url">
         <item>http://img1.pconline.com.cn/piclib/200811/09/batch/1/16241/1226244487956x9z4xg3wo7.jpg</item>
         <item>http://img1.pconline.com.cn/piclib/200811/09/batch/1/16241/1226244487956x9z4xg3wo7.jpg</item>
         <item>http://img1.pconline.com.cn/piclib/200811/09/batch/1/16241/1226244487956x9z4xg3wo7.jpg</item>
         <item>http://img1.pconline.com.cn/piclib/200811/09/batch/1/16241/1226244487956x9z4xg3wo7.jpg</item>
     </string-array>
-    <string-array name="title" >
+    <string-array name="title">
         <item>1</item>
         <item>2</item>
         <item>3</item>
