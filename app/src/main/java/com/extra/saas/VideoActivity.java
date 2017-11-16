@@ -99,7 +99,7 @@ public class VideoActivity extends BaseActivity {
                     .into(controller.getThumb());
             ivPlay
                     .autoRotate() //启用重力感应自动进入/推出全屏功能
-                    .setUrl(url) //设置视频地址
+                    .setUrl("http://tanzi27niu.cdsb.mobi/wps/wp-content/uploads/2017/04/2017-04-28_18-20-56.mp4") //设置视频地址
                     .setTitle(videoShowBean.getPost_title()) //设置视频标题
                     .setVideoController(controller)
                     .start(); //开始播放，不调用则不自动播放

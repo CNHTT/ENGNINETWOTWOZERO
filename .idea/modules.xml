@@ -7,7 +7,10 @@
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/library/library.iml" filepath="$PROJECT_DIR$/library/library.iml" />
       <module fileurl="file://$PROJECT_DIR$/loyalty/loyalty.iml" filepath="$PROJECT_DIR$/loyalty/loyalty.iml" />
+      <module fileurl="file://E:\AndroidCode\9220\loyalty\loyalty.iml" filepath="E:\AndroidCode\9220\loyalty\loyalty.iml" />
       <module fileurl="file://$PROJECT_DIR$/player/player.iml" filepath="$PROJECT_DIR$/player/player.iml" />
+      <module fileurl="file://E:\AndroidCode\9220\player\player.iml" filepath="E:\AndroidCode\9220\player\player.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pull/pull.iml" filepath="$PROJECT_DIR$/pull/pull.iml" />
     </modules>
   </component>
 </project>

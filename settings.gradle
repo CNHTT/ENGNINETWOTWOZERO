@@ -1,1 +1,1 @@
-include ':app', ':library', ':loyalty', ':player'
+include ':app', ':library', ':loyalty', ':player', ':pull'
