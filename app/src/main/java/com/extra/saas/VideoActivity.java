@@ -10,6 +10,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.devlin_n.floatWindowPermission.FloatWindowManager;
+import com.devlin_n.videoplayer.controller.StandardVideoController;
+import com.devlin_n.videoplayer.player.IjkVideoView;
 import com.extra.retrofit.HttpBuilder;
 import com.extra.saas.model.SmetaBean;
 import com.extra.saas.model.VideoShowBean;
@@ -18,9 +21,6 @@ import com.extra.saas.util.JsonUtil;
 import com.extra.utils.EncodeUtils;
 import com.extra.utils.SPUtils;
 import com.extra.utils.StatusBarUtil;
-import com.player.controller.StandardVideoController;
-import com.player.player.IjkVideoView;
-import com.player.util.FloatWindowManager;
 import com.player.util.L;
 
 import java.io.UnsupportedEncodingException;

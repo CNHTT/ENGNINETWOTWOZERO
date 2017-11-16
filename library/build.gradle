@@ -22,6 +22,7 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
     }
     buildToolsVersion '26.0.2'
+
 }
 
 dependencies {
@@ -37,9 +38,4 @@ dependencies {
     compile 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
     compile 'com.squareup.retrofit2:converter-scalars:2.1.0'
     compile 'com.squareup.okhttp3:okhttp:3.8.1'
-    compile 'tv.danmaku.ijk.media:ijkplayer-java:0.8.4'
-    compile 'tv.danmaku.ijk.media:ijkplayer-armv7a:0.8.4'
-    compile 'com.github.ctiao:DanmakuFlameMaster:0.9.16'
-    compile 'com.github.ctiao:ndkbitmap-armv7a:0.9.16'
-    compile 'com.danikula:videocache:2.7.0'
 }
