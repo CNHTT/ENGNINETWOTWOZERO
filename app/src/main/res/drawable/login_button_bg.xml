@@ -11,5 +11,5 @@
         android:startColor="#F23355"
         android:type="linear" />
 
-    <corners android:radius="10dip" />
+    <corners android:radius="5dip" />
 </shape>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/snow"/>
+    <corners android:topLeftRadius="1dip"
+        android:topRightRadius="1dip"
+        android:bottomRightRadius="1dip"
+        android:bottomLeftRadius="1dip" />
+    <!--圆角矩形白色背景-->
+</shape>

@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/9220.iml" filepath="$PROJECT_DIR$/.idea/9220.iml" />
+      <module fileurl="file://$PROJECT_DIR$/9220.iml" filepath="$PROJECT_DIR$/9220.iml" />
+      <module fileurl="file://D:\job\9220\.idea\9220.iml" filepath="D:\job\9220\.idea\9220.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/library/library.iml" filepath="$PROJECT_DIR$/library/library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/loyalty/loyalty.iml" filepath="$PROJECT_DIR$/loyalty/loyalty.iml" />
     </modules>
   </component>
 </project>

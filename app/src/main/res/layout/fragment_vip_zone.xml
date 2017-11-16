@@ -1,13 +1,58 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.extra.saas.fragment.VipZoneFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
 
-</FrameLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.extra.saas.HorizontalListView
+            android:id="@+id/gv_vip_terms"
+            android:gravity="center"
+            android:numColumns="auto_fit"
+            android:stretchMode="spacingWidthUniform"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"/>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"><!-- TODO: Update blank fragment layout -->
+            <TextView
+                android:id="@+id/tv_no_data"
+                android:visibility="gone"
+                android:gravity="center"
+                android:textSize="@dimen/text_font_8"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/no_data" />
+            <com.andview.refreshview.XRefreshView
+                android:id="@+id/custom_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                </android.support.v7.widget.RecyclerView>
+
+                <TextView
+                    android:id="@+id/show_data"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/no_data"/>
+
+            </com.andview.refreshview.XRefreshView>
+        </FrameLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

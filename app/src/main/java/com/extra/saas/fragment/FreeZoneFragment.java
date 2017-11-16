@@ -21,12 +21,14 @@ import com.extra.saas.App;
 import com.extra.saas.AppUrl;
 import com.extra.saas.MainActivity;
 import com.extra.saas.R;
+import com.extra.saas.VideoActivity;
 import com.extra.saas.VideoShowOnItemClickListener;
 import com.extra.saas.adapter.VideoShowAdapter;
 import com.extra.saas.adapter.VideoShowRecycleAdapter;
 import com.extra.saas.model.VideoShowBean;
 import com.extra.saas.result.Result;
 import com.extra.saas.result.ResultLogin;
+import com.extra.saas.result.ResultVideoInfo;
 import com.extra.saas.result.ResultVideoShow;
 import com.extra.saas.util.GlideImageLoader;
 import com.extra.saas.util.JsonUtil;
@@ -66,7 +68,7 @@ public class FreeZoneFragment extends BaseFragment implements VideoShowOnItemCli
     private View headerView;
 
     private int  page =1;
-    private int  pageSize =0;
+    private int  pageSize =10;
 
     private VideoShowRecycleAdapter adapter;
     private List<VideoShowBean> list = new ArrayList<>();
@@ -135,7 +137,7 @@ public class FreeZoneFragment extends BaseFragment implements VideoShowOnItemCli
         new HttpBuilder(AppUrl.freeZone)
                 .header("VOUCHER", SPUtils.getContent(getContext(),AppUrl.Voucher))
                 .params("page", String.valueOf(page))
-                .params("pagesize", String.valueOf(1))
+                .params("pagesize", String.valueOf(pageSize))
                 .tag(this)
                 .success( s ->{
                     xRefreshView.stopLoadMore(false);
@@ -143,7 +145,12 @@ public class FreeZoneFragment extends BaseFragment implements VideoShowOnItemCli
                     try {
                         ResultVideoShow result = (ResultVideoShow) JsonUtil.stringToObject(s,ResultVideoShow.class);
                         if (result.getCode()==1){
-                            page++;
+                            if (result.getData().size()==0){
+                                xRefreshView.stopRefresh(true);
+                            }else{
+                                page++;
+                            }
+
                             if (adapter ==null){
                                 adapter= new VideoShowRecycleAdapter(result.getData(),getContext(),this);
                             }
@@ -227,7 +234,15 @@ public class FreeZoneFragment extends BaseFragment implements VideoShowOnItemCli
                     L.d(s);
                     cancleProgressDialog();
                     try {
+                        ResultVideoInfo result = (ResultVideoInfo) JsonUtil.stringToObject(s,ResultVideoInfo.class);
+                        if (result.getCode()==1){
+                            Intent intent = new Intent(getActivity(), VideoActivity.class);
+                            intent.putExtra("VIDEO",result.getData());
+                            startActivity(intent);
 
+                        }else {
+                            showDialogToast(result.getMsg());
+                        }
                     }catch (Exception e){
                         Result result = (Result) JsonUtil.stringToObject(s,Result.class);
                         showDialogToast(result.getMsg());
@@ -246,22 +261,7 @@ public class FreeZoneFragment extends BaseFragment implements VideoShowOnItemCli
 
     @Override
     public void OnClickLike(VideoShowBean videoShowBean) {
-        showProgressDialog(R.string.loading);
-        new HttpBuilder(AppUrl.post_like)
-                .header("VOUCHER", SPUtils.getContent(getContext(),AppUrl.Voucher))
-                .params("id", videoShowBean.getId())
-                .success( s ->{
-                    L.d(s);
-                    cancleProgressDialog();
-                        Result result = (Result) JsonUtil.stringToObject(s,Result.class);
-                        showDialogToast(result.getMsg());
 
-                })
-                .error( e ->{
-                    cancleProgressDialog();
-                    showDialogToast(getResources().getString(R.string.check_net));
-                })
-                .post();
 
     }
 }

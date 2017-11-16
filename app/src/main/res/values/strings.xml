@@ -18,6 +18,10 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="no_data">NO DATA</string>
+    <string name="content">Content:</string>
+    <string name="favoritelist">Favorite List</string>
+    <string name="exit">Sign Out</string>
+    <string name="please_login">Please Login!!!</string>
 
 
     <string-array name="url">

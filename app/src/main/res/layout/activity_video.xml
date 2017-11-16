@@ -1,9 +1,106 @@
-<?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@color/all_bg_color"
     android:layout_height="match_parent"
-    tools:context="com.extra.saas.VideoActivity">
+    tools:context="com.extra.saas.VideoActivity"
+    android:orientation="vertical">
 
-</android.support.constraint.ConstraintLayout>
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/all_bg_color"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/>
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:background="@color/color_line"/>
+
+    <com.player.player.IjkVideoView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:id="@+id/iv_play"></com.player.player.IjkVideoView>
+    <LinearLayout
+        android:background="#66555555"
+        android:padding="5dp"
+        android:layout_gravity="bottom"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:paddingLeft="@dimen/length_10"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Brian Grenson" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:id="@+id/tv_hits"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1"
+            android:gravity="center"
+            android:drawableLeft="@drawable/ic_click"
+            android:paddingRight="@dimen/length_20"/>
+        <TextView
+            android:id="@+id/tv_like"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_like"
+            android:text="2"
+            android:gravity="center"
+            android:layout_marginRight="@dimen/length_30"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:gravity="right"
+        android:padding="@dimen/length_10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:background="@drawable/btn_nor_down"
+            android:id="@+id/recommended"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/length_10"
+            android:text="推荐" />
+        <Button
+            android:background="@drawable/btn_nor_down"
+        android:id="@+id/favorites"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="收藏" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/content"
+        android:padding="@dimen/length_10"
+        android:background="#55FFFFF0"
+        android:textStyle="bold"
+        android:textSize="19sp"
+        android:textColor="@color/white"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="无"
+        android:id="@+id/tv_content"
+        android:padding="@dimen/length_20"
+        android:textColor="@color/white"/>
+</LinearLayout>

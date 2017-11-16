@@ -2,12 +2,98 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/all_bg_color"
     tools:context="com.extra.saas.fragment.UserFragment">
 
-    <!-- TODO: Update blank fragment layout -->
+
+
+    <LinearLayout
+        android:id="@+id/ll_user"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:padding="@dimen/length_20"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/ib_logo"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/login_button_bg"/>
+
+            <LinearLayout
+                android:gravity="center|left"
+                android:layout_height="80dp"
+                android:paddingLeft="@dimen/length_20"
+                android:orientation="vertical"
+                android:layout_width="match_parent">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/app_name"
+                    android:textColor="@color/white"
+                    android:paddingBottom="@dimen/length_10"
+                    android:id="@+id/name"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/white"/>
+                <TextView
+                    android:paddingTop="@dimen/length_10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="00000000000"
+                    android:textColor="@color/wheat"
+                    android:id="@+id/expire_time"/>
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/favoritelist"
+            android:padding="@dimen/length_10"
+            android:background="#55FFFFF0"
+            android:textStyle="bold"
+            android:textSize="19sp"
+            android:textColor="@color/white"/>
+
+        <ListView
+            android:id="@+id/lv_list"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        </ListView>
+        <Button
+            android:id="@+id/btn_exit"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginLeft="@dimen/length_10"
+            android:layout_marginRight="@dimen/length_10"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="21dp"
+            android:background="@drawable/login_button_bg"
+            android:text="@string/exit"
+            android:textColor="@color/white"
+            android:textSize="18dp"/>
+    </LinearLayout>
+
+
     <TextView
+        android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:textColor="@color/red"
+        android:id="@+id/to_login"
+        android:text="@string/please_login"
+        />
+
+
 
 </FrameLayout>

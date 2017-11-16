@@ -1,10 +1,12 @@
 package com.extra.saas.model;
 
+import java.io.Serializable;
+
 /**
  * Created by Extra on 2017/11/15.
  */
 
-public class VideoShowBean {
+public class VideoShowBean implements Serializable {
     private String id;
     private String post_date;
     private String post_title;
@@ -19,6 +21,37 @@ public class VideoShowBean {
     private String post_source ;
 
 
+    public String getRecommended() {
+        return recommended;
+    }
+
+    public void setRecommended(String recommended) {
+        this.recommended = recommended;
+    }
+
+    public String getFavorites() {
+        return favorites;
+    }
+
+    public void setFavorites(String favorites) {
+        this.favorites = favorites;
+    }
+
+    public String getPost_content() {
+        return post_content;
+    }
+
+    public void setPost_content(String post_content) {
+        this.post_content = post_content;
+    }
+
+    public String getPost_source() {
+        return post_source;
+    }
+
+    public void setPost_source(String post_source) {
+        this.post_source = post_source;
+    }
 
     public String getId() {
         return id;
