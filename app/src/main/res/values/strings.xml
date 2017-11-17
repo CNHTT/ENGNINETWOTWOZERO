@@ -1,27 +1,28 @@
 <resources>
     <string name="app_name">SaaS</string>
-    <string name="login">Login</string>
-    <string name="no_account">Don\'t have an account?</string>
-    <string name="register">Register</string>
-    <string name="confirm_password">Confirm password</string>
-    <string name="enter_pass">Please enter your password</string>
-    <string name="enter_name">please enter user name</string>
-    <string name="please_input">Please Input!!!</string>
-    <string name="check_net">Please Check NetWork!!</string>
-    <string name="please_email">please enter your vaild email</string>
-    <string name="please_re_pass">Please enter the confirmation password</string>
-    <string name="loading">loading...</string>
-    <string name="free_zone">FreeZone</string>
-    <string name="vip_zone">VipZone</string>
-    <string name="personal">Personal</string>
+    <string name="login">登录</string>
+    <string name="no_account">立即注册?</string>
+    <string name="register">注册</string>
+    <string name="confirm_password">确认密码</string>
+    <string name="enter_pass">请输入密码</string>
+    <string name="enter_name">请输入邮箱</string>
+    <string name="please_input">请输入!!!</string>
+    <string name="check_net">请检查网络!!</string>
+    <string name="please_email">请输入正确的邮箱！</string>
+    <string name="please_re_pass">请输入正确的密码</string>
+    <string name="loading">加载中...</string>
+    <string name="free_zone">免费专区</string>
+    <string name="vip_zone">Vip专区</string>
+    <string name="personal">个人中心</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="no_data">NO DATA</string>
-    <string name="content">Content:</string>
-    <string name="favoritelist">Favorite List</string>
-    <string name="exit">Sign Out</string>
-    <string name="please_login">Please Login!!!</string>
+    <string name="no_data">没有数据！</string>
+    <string name="content">内容详情:</string>
+    <string name="favoritelist">收藏列表</string>
+    <string name="exit">退出登录</string>
+    <string name="please_login">请登录!!!</string>
+    <string name="please_pass">请输入密码</string>
 
 
     <string-array name="url">

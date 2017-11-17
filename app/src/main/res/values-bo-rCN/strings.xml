@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">SaaS</string>
+    <string name="login">登录</string>
+    <string name="no_account">立即登录?</string>
+    <string name="register">注册</string>
+    <string name="confirm_password">确认密码</string>
+    <string name="enter_pass">请输入密码</string>
+    <string name="enter_name">请输入邮箱</string>
+    <string name="please_pass">请输入密码</string>
+    <string name="please_input">请输入!!!</string>
+    <string name="check_net">请检查网络!!</string>
+    <string name="please_email">请输入正确的邮箱！</string>
+    <string name="please_re_pass">请输入正确的密码</string>
+    <string name="loading">加载中...</string>
+    <string name="free_zone">免费专区</string>
+    <string name="vip_zone">Vip专区</string>
+    <string name="personal">个人中心</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="no_data">没有数据！</string>
+    <string name="content">内容详情:</string>
+    <string name="favoritelist">收藏列表</string>
+    <string name="exit">退出登录</string>
+    <string name="please_login">请登录!!!</string>
+
+
+    <string-array name="url">
+        <item>http://img1.pconline.com.cn/piclib/200811/09/batch/1/16241/1226244487956x9z4xg3wo7.jpg</item>
+        <item>http://img1.pconline.com.cn/piclib/200811/09/batch/1/16241/1226244487956x9z4xg3wo7.jpg</item>
+        <item>http://img1.pconline.com.cn/piclib/200811/09/batch/1/16241/1226244487956x9z4xg3wo7.jpg</item>
+        <item>http://img1.pconline.com.cn/piclib/200811/09/batch/1/16241/1226244487956x9z4xg3wo7.jpg</item>
+    </string-array>
+    <string-array name="title">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+</resources>

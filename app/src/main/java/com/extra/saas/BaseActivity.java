@@ -50,7 +50,7 @@ public class BaseActivity  extends AppCompatActivity {
     protected DialogSure dialogSure;
     protected void showDialogToast(String toast) {
         if (dialogSure==null)dialogSure = new DialogSure(this);
-        dialogSure.setTitle("ERROR");
+        dialogSure.setTitle("提示");
         dialogSure.getTvContent().setText(toast);
         dialogSure.getTvSure().setOnClickListener(new View.OnClickListener() {
             @Override public void onClick(View v) {

@@ -40,7 +40,7 @@
         android:background="@color/color_line"/>
 
     <LinearLayout
-        android:textColor="@drawable/tab_menu_deal_text"
+        android:textColor="@drawable/main_bottom"
         android:id="@+id/tab_menu"
         android:layout_width="match_parent"
         android:layout_height="56dp"
@@ -58,7 +58,7 @@
         <View
             android:layout_width="0.5dp"
             android:layout_height="match_parent"
-            android:background="@color/c"/>
+            android:background="@color/dimgrey"/>
         <TextView
             android:textColor="@drawable/tab_menu_deal_text"
             android:id="@+id/txt_Vip_Zone"
@@ -72,7 +72,7 @@
         <View
             android:layout_width="0.5dp"
             android:layout_height="match_parent"
-            android:background="@color/c"/>
+            android:background="@color/dimgrey"/>
         <TextView
             android:textColor="@drawable/tab_menu_deal_text"
             android:id="@+id/txt_user"
