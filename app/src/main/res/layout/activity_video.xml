@@ -36,17 +36,26 @@
             android:id="@+id/tv_title"
             android:paddingLeft="@dimen/length_10"
             android:textSize="16sp"
+            android:layout_marginRight="10dp"
             android:textColor="@color/white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Brian Grenson" />
 
+
+        <ImageView
+            android:src="@drawable/ic_recommended_n"
+            android:id="@+id/recommended"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/length_10"
+            tools:ignore="VectorDrawableCompat" />
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_weight="1"/>
-
         <TextView
+            android:drawablePadding="5dp"
             android:id="@+id/tv_hits"
             android:textColor="@color/white"
             android:layout_width="wrap_content"
@@ -61,46 +70,65 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:drawableLeft="@drawable/ic_like"
+            android:drawablePadding="5dp"
             android:text="2"
             android:gravity="center"
-            android:layout_marginRight="@dimen/length_30"/>
-    </LinearLayout>
+            android:layout_marginRight="@dimen/length_20"/>
 
-    <LinearLayout
-        android:gravity="right"
-        android:padding="@dimen/length_10"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <Button
-            android:background="@drawable/btn_nor_down"
-            android:id="@+id/recommended"
+        <ImageView
+            android:paddingRight="20dp"
+            android:paddingLeft="10dp"
+            android:src="@drawable/ic_favorites_n"
+            android:id="@+id/favorites"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="@dimen/length_10"
-            android:text="推荐" />
-        <Button
-            android:background="@drawable/btn_nor_down"
-        android:id="@+id/favorites"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="收藏" />
+            tools:ignore="VectorDrawableCompat" />
     </LinearLayout>
 
-    <TextView
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/content"
-        android:padding="@dimen/length_10"
-        android:background="#55FFFFF0"
-        android:textStyle="bold"
-        android:textSize="19sp"
-        android:textColor="@color/white"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="无"
-        android:id="@+id/tv_content"
-        android:padding="@dimen/length_20"
-        android:textColor="@color/white"/>
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#55FFFFF0"
+                android:padding="@dimen/length_10"
+                android:text="@string/content"
+                android:textColor="@color/white"
+                android:textSize="19sp"
+                android:textStyle="bold" />
+
+            <WebView
+                android:scrollbars="none"
+                android:id="@+id/tv_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/length_20" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#55FFFFF0"
+                android:padding="@dimen/length_10"
+                android:text="@string/t_photo"
+                android:textColor="@color/white"
+                android:textSize="19sp"
+                android:textStyle="bold" />
+
+            <com.extra.view.listview.InnerScrollerListView
+                android:id="@+id/lv_photo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+    </ScrollView>
+
 </LinearLayout>

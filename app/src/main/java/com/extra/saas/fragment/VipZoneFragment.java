@@ -20,6 +20,7 @@ import com.andview.refreshview.XRefreshViewFooter;
 import com.extra.retrofit.HttpBuilder;
 import com.extra.saas.AppUrl;
 import com.extra.saas.HorizontalListView;
+import com.extra.saas.LoginActivity;
 import com.extra.saas.R;
 import com.extra.saas.VideoActivity;
 import com.extra.saas.VideoShowOnItemClickListener;
@@ -31,6 +32,7 @@ import com.extra.saas.result.ResultTrems;
 import com.extra.saas.result.ResultVideoInfo;
 import com.extra.saas.result.ResultVideoShow;
 import com.extra.saas.util.JsonUtil;
+import com.extra.utils.DataUtils;
 import com.extra.utils.SPUtils;
 import com.player.util.L;
 
@@ -277,6 +279,10 @@ public class VipZoneFragment extends BaseFragment implements VideoShowOnItemClic
 
     @Override
     public void OnClickLike(VideoShowBean videoShowBean) {
-
+        if (DataUtils.isNullString(SPUtils.getString(getActivity(),AppUrl.Voucher)))
+        {
+            startActivity(new Intent(getActivity(),LoginActivity.class));
+            return;
+        }
     }
 }

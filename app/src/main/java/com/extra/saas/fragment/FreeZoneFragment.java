@@ -19,6 +19,7 @@ import com.extra.retrofit.HttpBuilder;
 import com.extra.saas.AdHeader;
 import com.extra.saas.App;
 import com.extra.saas.AppUrl;
+import com.extra.saas.LoginActivity;
 import com.extra.saas.MainActivity;
 import com.extra.saas.R;
 import com.extra.saas.VideoActivity;
@@ -34,6 +35,7 @@ import com.extra.saas.util.GlideImageLoader;
 import com.extra.saas.util.JsonUtil;
 import com.extra.utils.AppManager;
 import com.extra.utils.ContextUtils;
+import com.extra.utils.DataUtils;
 import com.extra.utils.SPUtils;
 import com.extra.utils.ToastUtils;
 import com.extra.view.listview.PullListView;
@@ -261,7 +263,11 @@ public class FreeZoneFragment extends BaseFragment implements VideoShowOnItemCli
 
     @Override
     public void OnClickLike(VideoShowBean videoShowBean) {
-
+        if (DataUtils.isNullString(SPUtils.getString(getActivity(),AppUrl.Voucher)))
+        {
+            startActivity(new Intent(getActivity(),LoginActivity.class));
+            return;
+        }
 
     }
 }

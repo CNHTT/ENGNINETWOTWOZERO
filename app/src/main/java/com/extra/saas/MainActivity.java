@@ -1,4 +1,5 @@
 package com.extra.saas;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -11,6 +12,8 @@ import android.widget.TextView;
 import com.extra.saas.fragment.FreeZoneFragment;
 import com.extra.saas.fragment.UserFragment;
 import com.extra.saas.fragment.VipZoneFragment;
+import com.extra.utils.DataUtils;
+import com.extra.utils.SPUtils;
 import com.extra.utils.StatusBarUtil;
 
 import butterknife.BindView;
@@ -132,6 +135,11 @@ public class MainActivity extends BaseActivity {
                 }
                 break;
             case R.id.txt_user:
+                if (DataUtils.isNullString(SPUtils.getString(this,AppUrl.Voucher)))
+                {
+                    startActivity(new Intent(this,LoginActivity.class));
+                    return;
+                }
                 toolbarTitle.setText(getResources().getString(R.string.personal));
                 txtUser.setTextSize(14);
                 txtUser.setSelected(true);

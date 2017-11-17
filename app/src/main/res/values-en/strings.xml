@@ -26,6 +26,7 @@
     <string name="favoritelist">Favorite List</string>
     <string name="exit">Sign Out</string>
     <string name="please_login">Please Login!!!</string>
+    <string name="t_photo">精彩片段</string>
 
 
     <string-array name="url">

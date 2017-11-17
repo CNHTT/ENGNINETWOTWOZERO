@@ -23,6 +23,7 @@
     <string name="exit">退出登录</string>
     <string name="please_login">请登录!!!</string>
     <string name="please_pass">请输入密码</string>
+    <string name="t_photo">精彩片段</string>
 
 
     <string-array name="url">
