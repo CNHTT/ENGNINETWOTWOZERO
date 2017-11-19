@@ -468,7 +468,7 @@
     <string name="input_please">Please enter the</string>
     <string name="message">MESSAGE</string>
     <string name="announcement">ANNOUNCEMENT</string>
-    <string name="affirm">AFFIRM</string>
+    <string name="affirm">确认</string>
 
 
     <string-array name="markArray">

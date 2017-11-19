@@ -9,4 +9,6 @@ import com.extra.saas.model.VideoShowBean;
 public interface VideoShowOnItemClickListener {
     void OnItemClick(VideoShowBean videoShowBean);
     void OnClickLike(VideoShowBean videoShowBean);
+    void OnLongClick(VideoShowBean videoShowBean);
+
 }

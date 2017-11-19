@@ -16,6 +16,7 @@ import android.widget.VideoView;
 import com.andview.refreshview.XRefreshView;
 import com.andview.refreshview.XRefreshViewFooter;
 import com.extra.retrofit.HttpBuilder;
+import com.extra.retrofit.HttpUtil;
 import com.extra.saas.AdHeader;
 import com.extra.saas.App;
 import com.extra.saas.AppUrl;
@@ -269,5 +270,16 @@ public class FreeZoneFragment extends BaseFragment implements VideoShowOnItemCli
             return;
         }
 
+    }
+
+    @Override
+    public void OnLongClick(VideoShowBean videoShowBean) {
+
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        HttpUtil.cancel(this);
     }
 }

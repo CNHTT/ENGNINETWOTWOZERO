@@ -18,6 +18,7 @@ import android.widget.TextView;
 import com.andview.refreshview.XRefreshView;
 import com.andview.refreshview.XRefreshViewFooter;
 import com.extra.retrofit.HttpBuilder;
+import com.extra.retrofit.HttpUtil;
 import com.extra.saas.AppUrl;
 import com.extra.saas.HorizontalListView;
 import com.extra.saas.LoginActivity;
@@ -284,5 +285,18 @@ public class VipZoneFragment extends BaseFragment implements VideoShowOnItemClic
             startActivity(new Intent(getActivity(),LoginActivity.class));
             return;
         }
+    }
+
+    @Override
+    public void OnLongClick(VideoShowBean videoShowBean) {
+
+    }
+
+
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        HttpUtil.cancel(this);
     }
 }

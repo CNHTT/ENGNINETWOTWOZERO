@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#33555555">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/rootView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_margin="5dp"
+            android:id="@+id/iv_thumb"
+            android:scaleType="fitXY"
+            android:layout_width="160dp"
+            android:layout_height="80dp"
+            android:src="@mipmap/logo"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tv_title"
+                android:paddingLeft="@dimen/length_10"
+                android:layout_marginBottom="@dimen/length_20"
+                android:layout_marginTop="@dimen/length_20"
+                android:textSize="16sp"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Brian Grenson" />
+            <LinearLayout
+                android:padding="5dp"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:id="@+id/tv_hits"
+                    android:textColor="@color/white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1"
+                    android:drawablePadding="5dp"
+                    android:gravity="center"
+                    android:drawableLeft="@drawable/ic_click"
+                    android:paddingRight="@dimen/length_20"/>
+                <TextView
+                    android:id="@+id/tv_like"
+                    android:textColor="@color/white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="5dp"
+                    android:drawableLeft="@drawable/ic_like"
+                    android:text="2"
+                    android:textSize="@dimen/text_font_8"
+                    android:gravity="center"
+                    android:layout_marginRight="@dimen/length_30"/>
+
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</FrameLayout>

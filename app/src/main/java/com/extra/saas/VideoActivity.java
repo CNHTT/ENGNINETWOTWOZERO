@@ -126,7 +126,7 @@ public class VideoActivity extends BaseActivity {
             p = p.replace("<img", "<img  width=\"100%\"");
 
             if (videoShowBean.getPost_content() != "")
-              tvContent.loadDataWithBaseURL(null,p,"text/html" , "utf-8", null);
+              tvContent.loadDataWithBaseURL(null,videoShowBean.getPost_content(),"text/html" , "utf-8", null);
             tvLike.setText(videoShowBean.getPost_like());
             tvTitle.setText(videoShowBean.getPost_title());
             tvHits.setText(videoShowBean.getPost_hits());

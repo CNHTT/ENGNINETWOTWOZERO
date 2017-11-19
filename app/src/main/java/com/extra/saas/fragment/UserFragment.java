@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -14,19 +15,27 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.extra.retrofit.HttpBuilder;
+import com.extra.retrofit.HttpUtil;
 import com.extra.saas.App;
 import com.extra.saas.AppUrl;
 import com.extra.saas.LoginActivity;
 import com.extra.saas.R;
 import com.extra.saas.VideoActivity;
+import com.extra.saas.VideoShowOnItemClickListener;
+import com.extra.saas.adapter.FavoriteAdapter;
+import com.extra.saas.adapter.VideoShowRecycleAdapter;
 import com.extra.saas.model.Member;
+import com.extra.saas.model.VideoShowBean;
 import com.extra.saas.result.Result;
 import com.extra.saas.result.ResultMember;
 import com.extra.saas.result.ResultVideoInfo;
+import com.extra.saas.result.ResultVideoShow;
 import com.extra.saas.util.JsonUtil;
 import com.extra.utils.AppManager;
 import com.extra.utils.DataUtils;
 import com.extra.utils.SPUtils;
+import com.extra.utils.ToastUtils;
+import com.extra.view.dialog.DialogSureCancel;
 import com.player.util.L;
 
 import butterknife.BindView;
@@ -34,10 +43,12 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.Unbinder;
 
+import static com.extra.utils.Utils.getContext;
+
 /**
  * A simple {@link Fragment} subclass.
  */
-public class UserFragment extends BaseFragment {
+public class UserFragment extends BaseFragment implements VideoShowOnItemClickListener {
 
 
     @BindView(R.id.ib_logo)
@@ -74,6 +85,7 @@ public class UserFragment extends BaseFragment {
     }
 
     private void initView() {
+
         voucher = SPUtils.getString(getContext(), AppUrl.Voucher);
         if (DataUtils.isNullString(voucher))
         {
@@ -114,6 +126,30 @@ public class UserFragment extends BaseFragment {
                     })
                     .get();
 
+            new HttpBuilder(AppUrl.freeZone)
+                    .header("VOUCHER", SPUtils.getContent(getContext(),AppUrl.Voucher))
+                    .tag(this)
+                    .success( s ->{
+                        try {
+                            ResultVideoShow result = (ResultVideoShow) JsonUtil.stringToObject(s,ResultVideoShow.class);
+                            if (result.getCode()==1){
+                                FavoriteAdapter adapter = new FavoriteAdapter(getContext(),result.getData(),this);
+                                lvList.setAdapter(adapter);
+
+                            }else {
+                                showDialogToast(result.getMsg());
+                            }
+                        }catch (Exception e){
+                            Result result = (Result) JsonUtil.stringToObject(s,Result.class);
+                            showDialogToast(result.getMsg());
+                        }
+
+                    })
+                    .error( e ->{
+                        showDialogToast(getResources().getString(R.string.check_net));
+                    })
+                    .get();
+
 
 
         }
@@ -136,5 +172,93 @@ public class UserFragment extends BaseFragment {
                 startActivity(new Intent(getActivity(), LoginActivity.class));
                 break;
         }
+    }
+
+    @Override
+    public void OnItemClick(VideoShowBean videoShowBean) {
+        showProgressDialog(R.string.loading);
+        new HttpBuilder(AppUrl.movies)
+                .header("VOUCHER", SPUtils.getContent(getContext(),AppUrl.Voucher))
+                .params("id", videoShowBean.getId())
+                .success( s ->{
+                    L.d(s);
+                    cancleProgressDialog();
+                    try {
+                        ResultVideoInfo result = (ResultVideoInfo) JsonUtil.stringToObject(s,ResultVideoInfo.class);
+                        if (result.getCode()==1){
+                            Intent intent = new Intent(getActivity(), VideoActivity.class);
+                            intent.putExtra("VIDEO",result.getData());
+                            startActivity(intent);
+
+                        }else {
+                            showDialogToast(result.getMsg());
+                        }
+                    }catch (Exception e){
+                        Result result = (Result) JsonUtil.stringToObject(s,Result.class);
+                        showDialogToast(result.getMsg());
+                    }
+
+
+                })
+                .error( e ->{
+                    cancleProgressDialog();
+                    showDialogToast(getResources().getString(R.string.check_net));
+                })
+                .post();
+    }
+
+    @Override
+    public void OnClickLike(VideoShowBean videoShowBean) {
+
+    }
+
+    private DialogSureCancel dialogSureCancel;
+    @Override
+    public void OnLongClick(VideoShowBean videoShowBean) {
+        if (dialogSureCancel==null)
+            dialogSureCancel = new DialogSureCancel(getContext());
+
+        dialogSureCancel.setTitle("提示");
+        dialogSureCancel.getTvContent().setText("是否删除此视频！！");
+
+
+        dialogSureCancel.setSureListener( v ->{
+            dialogSureCancel.cancel();
+            showProgressDialog(R.string.loading);
+                new HttpBuilder(AppUrl.delFavorites)
+                        .header("VOUCHER", SPUtils.getContent(getContext(), AppUrl.Voucher))
+                        .params("object_id", videoShowBean.getId())
+                        .success(s -> {
+                            L.d(s);
+                            cancleProgressDialog();
+                            Result result = (Result) JsonUtil.stringToObject(s, Result.class);
+                            ToastUtils.success(result.getMsg());
+                            if (result.getCode() == 1) {
+                                showDialogToast(result.getMsg());
+                            }
+
+
+                        })
+                        .error(e -> {
+                            cancleProgressDialog();
+                            showDialogToast(getResources().getString(R.string.check_net));
+                        })
+                        .post();
+        });
+
+        dialogSureCancel.setCancelListener( v ->{
+            dialogSureCancel.cancel();
+
+        });
+
+        dialogSureCancel.show();
+    }
+
+
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        HttpUtil.cancel(this);
     }
 }

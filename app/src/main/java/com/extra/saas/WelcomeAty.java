@@ -33,7 +33,7 @@ public class WelcomeAty extends AppCompatActivity {
         setContentView(R.layout.activity_welcome_aty);
         ButterKnife.bind(this);
 
-        Glide.with(this).load("http://f.hiphotos.baidu.com/image/pic/item/3b87e950352ac65c7d87ba95f1f2b21192138a52.jpg").into(imageView);
+        Glide.with(this).load("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1511102993009&di=453775d011b9612599b9e7a7c98c5724&imgtype=0&src=http%3A%2F%2Fimg4q.duitang.com%2Fuploads%2Fitem%2F201504%2F23%2F20150423H4547_NSyJn.thumb.700_0.jpeg").into(imageView);
 
         Observable.timer(3, TimeUnit.SECONDS)
                 .observeOn(AndroidSchedulers.mainThread())
